@@ -3,11 +3,10 @@ const colors = ["green", "white", "blue", "yellow", "grey", "black", "orange", "
 const button = document.getElementById("btn");
 const color = document.querySelector(".color");
 
-button.addEventListener(`click`, function(){
-    document.body.style.backgroundColor = colors[randomNum()];
-    color.textContent = colors[randomNum()];
+button.addEventListener(`click`, () => {
+    let randomNumberForColor = randomNum();
+    document.body.style.backgroundColor = colors[randomNumberForColor];
+    color.textContent = colors[randomNumberForColor];
 })
 
-function randomNum(){
-    return Math.floor(Math.random() * colors.length);
-}
+let randomNum = () => { return Math.floor(Math.random() * colors.length); }
